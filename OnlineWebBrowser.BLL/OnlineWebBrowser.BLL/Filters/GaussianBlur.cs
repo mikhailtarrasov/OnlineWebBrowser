@@ -33,15 +33,11 @@ namespace OnlineWebBrowser.BLL.Filters
                 var blurredImg = new Mat();
                 CvInvoke.GaussianBlur(croppedImage, blurredImg, Size.Empty, Radius);
 
-                var xx = 0;
-                var yy = 0;
-                for (int y = region.Y; y < region.Y + region.Height - 1; y++) {
-                    for (int x = region.X; x < region.X + region.Width - 1; x++) {
+                for (int y = region.Y, yy = 0; yy < region.Height; y++, yy++) {
+                    for (int x = region.X, xx = 0; xx < region.Width; x++, xx++) {
                         var p = blurredImg.Bitmap.GetPixel(xx, yy);
                         image.Bitmap.SetPixel(x, y, p);
-                        xx++;
                     }
-                    yy++;
                 }
             }
         }

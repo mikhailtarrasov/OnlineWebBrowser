@@ -58,6 +58,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FaceBlurrer.cs" />
     <Compile Include="Filters\GaussianBlur.cs" />
     <Compile Include="ImageAreasEditor.cs" />
     <Compile Include="Interfaces\IFilter.cs" />
